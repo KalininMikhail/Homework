@@ -43,16 +43,16 @@ Node* insert(Node* root, int key) {
 
 
 int BinarySearchTree(struct Node* node){// 
-	if (node == NULL)//Если дерево пустое, оно Двоичное Дерево Поиска
+	if (node == NULL)//If tree is empty it is BST
 		return 1;
 
-	if (node->Left != NULL && node->Left->value > node->value)// если левый потомок больше родителя, то дерево не Двоичное Дерево Поиска
+	if (node->Left != NULL && node->Left->value > node->value)// If left child is more than parent than it is not BST
 		return 0;
 
-	if (node->Right != NULL && node->Right->value < node->value)// если правый потомок меньше родителя, то дерево не Двоичное Дерево Поиска
+	if (node->Right != NULL && node->Right->value < node->value)// is roght child is more than parent than is is not BST
 		return 0;
 
-	if (!BinarySearchTree(node->Left) || !BinarySearchTree(node->Right)) // Далее рекурсивно спускаемся вглубь дерева
+	if (!BinarySearchTree(node->Left) || !BinarySearchTree(node->Right)) // recursively getting inside the tree
 		return 0;
 
 	return 1;
